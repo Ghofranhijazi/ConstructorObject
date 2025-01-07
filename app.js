@@ -43,12 +43,18 @@ console.log(firstName(person));
 
 console.log("***************");
 console.log("Q3 :");
-function myArray(firstName, age) {
-    this.firstName = firstName;
-    this.age = age;
+function objectToArray(obj) {
+  let result = []; 
+  for (let key in obj) { 
+    result.push(key);     
+    result.push(obj[key]); 
+  }
+  return result;
 }
-const arr = new myArray("ghofran", 22);
-console.log(arr);
+
+
+const result = objectToArray({ firstName: "Moh", age: 24 });
+console.log(result); 
 
 
 
