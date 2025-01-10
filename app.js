@@ -4,7 +4,7 @@ function Car(brand, model, year) {
     this.model = model;
     this.year = year;
     this.getDetails = function () {
-        return `Brand : ${ this.brand }, Model: ${ this.model }, Year: ${ this.year }`;
+        return `Brand : ${this.brand}, Model: ${this.model}, Year: ${this.year}`;
     };
 
 }
@@ -29,32 +29,45 @@ for (let i = 0; i < arrayofCar.length; i++) {
 console.log("***************");
 console.log("Q2 :");
 function firstName(person) {
-    return Object.values(person);
+   let firstName = [];
+   for(i=0; i<person.length;i++){
+    firstName.push(person[i].fn);
+   };
+   return firstName;
 }
 
-let person = {
-    firstName1: "ghofran",
-    firstName2: "heba",
-    firstName3: "hala",
-    firstName4: "ahlam",
-    firstName5: "jenan",
-}
+let person = [
+
+    { fn: "ghofran", ln: "hijazi" },
+    { fn: "ammar", ln: "hijazi" },
+    { fn: "karam", ln: "hijazi" },
+    { fn: "jameelah", ln: "hijazi" },
+    { fn: "shahrzad", ln: "hijazi" },
+];
+
 console.log(firstName(person));
 
 console.log("***************");
 console.log("Q3 :");
 function objectToArray(obj) {
-  let result = []; 
-  for (let key in obj) { 
-    result.push(key);     
-    result.push(obj[key]); 
+    let result = []; 
+    for (let key in obj) { 
+      result.push(key);     
+      result.push(obj[key]); 
+    }
+    return result;
   }
-  return result;
-}
+  
+  
+  const result = objectToArray({ firstName: "Moh", age: 24 });
+  console.log(result); 
+  
 
 
-const result = objectToArray({ firstName: "Moh", age: 24 });
-console.log(result); 
+
+
+
+
 
 
 
